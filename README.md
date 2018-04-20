@@ -2,12 +2,20 @@
 Monitor state cpu frequency and temperature for OrangePI One or similar SoC.
 
 Example:
+
 orangepi@OrangePI:~$ sudo ./opicpumon 
+
 Use <ctrl-c> to exit
+
 Time	CPU0	CPU1	CPU2	CPU3	T0	T1
+
 14:53:10	1200000	1200000	1200000	1200000	77	77
+
 14:53:16	1200000	1200000	1200000	1200000	78	78
+
 14:53:22	1200000	1200000	1200000	1200000	77	77
+
 14:53:28	1200000	1200000	1200000	1200000	78	78
+
 14:53:34	1200000	1200000	1200000	1200000	78	78
 
