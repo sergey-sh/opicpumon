@@ -1,0 +1,31 @@
+#!/bin/bash
+
+H="Time"
+
+i=0
+while [ -e /sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq ] ; do
+	H=$H"\tCPU$i"
+	i=$((i+1))
+done
+i=0
+while [ -e /sys/devices/virtual/thermal/thermal_zone$i/temp ] ; do
+	H=$H"\tT$i"
+	i=$((i+1))
+done
+echo "Use <ctrl-c> to exit"
+echo -e $H
+while [ 1 ] ;do
+	H=$(date "+%H:%M:%S")
+	i=0
+	while [ -e /sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq ] ; do
+        	H=$H"\t"$(cat /sys/devices/system/cpu/cpu$i/cpufreq/cpuinfo_cur_freq)
+        	i=$((i+1))
+	done
+	i=0
+	while [ -e /sys/devices/virtual/thermal/thermal_zone$i/temp ] ; do
+        	H=$H"\t"$(cat /sys/devices/virtual/thermal/thermal_zone$i/temp)
+        	i=$((i+1))
+	done
+	echo -e $H
+	sleep 6
+done
