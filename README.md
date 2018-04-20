@@ -1,5 +1,5 @@
 # opicpumon
-Monitor state cpu frequency and temperature
+Monitor state cpu frequency and temperature for OrangePI One or similar SoC.
 
 Example:
 orangepi@OrangePI:~$ sudo ./opicpumon 
